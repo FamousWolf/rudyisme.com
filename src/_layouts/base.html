@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>
-        {% if page.url == '/'%}
+        {% if page.url == '/' %}
             {{ site.name }} | {{ title }}
         {% else %}
             {{ title }} | {{ site.name }}
@@ -16,7 +16,10 @@
     <meta property="og:title" content="{{ title }} | {{ site.name }}" />
     <meta property="og:description" content="{{ description }}" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://{{ client.domain }}{{ page.url }}" />
+    <meta property="og:url" content="{{ site.baseUrl }}{{ page.url }}" />
+    {% if page.url != '/' %}
+    <meta property="og:image" content="{{ image }}" />
+    {% endif %}
     <meta name="apple-mobile-web-app-capable" content="no" />
     <link rel="stylesheet" href="/assets/Css/Main.css" media="all" />
     <link rel="canonical" href="{{ site.baseUrl }}{{ page.url }}" />
