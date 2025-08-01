@@ -14,6 +14,9 @@ export default function(config) {
     config.addFilter('rawPostDate', (dateObj) => {
         return DateTime.fromJSDate(dateObj).toFormat('yyyy-LL-dd');
     });
+    config.addFilter('absoluteUrl', (relativePath, pagePath, baseUrl) => {
+        return new URL(relativePath, baseUrl + pagePath).href
+    });
 
     config.addCollection('post', function (collection) {
         return collection.getAllSorted().reverse();

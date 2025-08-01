@@ -18,7 +18,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ site.baseUrl }}{{ page.url }}" />
     {% if page.url != '/' %}
-    <meta property="og:image" content="{{ image }}" />
+    <meta property="og:image" content="{{ image | absoluteUrl: page.url, site.baseUrl }}" />
     {% endif %}
     <meta name="apple-mobile-web-app-capable" content="no" />
     <link rel="stylesheet" href="/assets/Css/Main.css" media="all" />
