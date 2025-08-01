@@ -21,4 +21,13 @@ When running locally with `npm run watch` or `npm run watch:eleventy`, a webserv
 
 ## Deployment
 
-Deployment has not been implemented yet. For now, manually transfer the contents of `public` to the webserver.
+Deployment is done using GitHub Actions. See `.github/workflows/deploy.yaml` for the steps involved.
+
+The following secrets need to be added to the repository:
+
+| Name            | Description                                              |
+|-----------------|----------------------------------------------------------|
+| SSH_HOST        | The host the code should be deployed to                  |
+| SSH_PRIVATE_KEY | The SSH private key needed to connect to the host        |
+| SSH_TARGET_DIR  | The directory on the host the code should be deployed to |
+| SSH_USER        | The user needed to connect to the host                   |
