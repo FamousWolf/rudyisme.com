@@ -1,0 +1,186 @@
+header#title {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+
+  h1 {
+    order: 2;
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
+    line-height: 4rem;
+    width: 400px;
+    max-width: 100%;
+    font-family: Satisfy, sans-serif;
+
+    a {
+      display: block;
+      padding: 0 1rem;
+      background-color: #ff9900;
+      color: #ffffff;
+      text-decoration: none;
+    }
+  }
+
+  nav.menu {
+    order: 1;
+    width: 4rem;
+    height: 4rem;
+    white-space: nowrap;
+    background-color: #333333;
+    color: #ffffff;
+
+    input {
+      position: relative;
+      opacity: 0;
+      width: 4rem;
+      height: 4rem;
+      z-index: 2;
+      margin: 0;
+      padding: 0;
+      border: none;
+      cursor: pointer;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 1.35rem;
+      left: .75rem;
+      width: 2.5rem;
+      height: .3rem;
+      background-color: #ffffff;
+      transition: top .3s ease .3s, transform .3s 0s;
+
+    }
+
+    &:after {
+      top: 2.35rem;
+    }
+
+    &:has(input:checked):before,
+    &:has(input:checked):after {
+      top: 1.85rem;
+      transform: rotate(45deg);
+      transition: top .3s ease 0s, transform .3s .3s;
+    }
+
+    &:has(input:checked):after {
+      transform: rotate(-45deg);
+    }
+
+    aside {
+      display: none;
+      position: absolute;
+      top: 4rem;
+      left: 0;
+      right: 0;
+      background-color: #333333;
+      margin: 0;
+      padding: 2rem;
+      white-space: initial;
+      font-size: 1rem;
+      flex-wrap: wrap;
+
+      section {
+        width: 100%;
+        border-bottom: 2px solid #ffffff;
+        margin: 0 0 1rem 0;
+        padding: 0 0 1rem 0;
+
+        h2 {
+          font-size: 125%;
+          margin: 0 0 .5rem 0;
+          padding: 0;
+        }
+
+        &.about {
+          img {
+            width: 150px;
+            height: 150px;
+            border: 3px solid #ffffff;
+            float: right;
+            margin: 0 0 .5rem 1rem;
+          }
+        }
+
+        &.links {
+          ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            li {
+              display: inline-block;
+              width: 3rem;
+              height: 3rem;
+              overflow: hidden;
+
+              a:before {
+                display: inline-block;
+                content: '\f0c1';
+                font-family: "Font Awesome 6 Free";
+                font-weight: 900;
+                font-size: 2rem;
+                width: 3rem;
+                height: 3rem;
+                color: #ffffff;
+                text-align: center;
+              }
+
+              a:hover:before {
+                color: #ff9900;
+              }
+
+              &.github {
+                a:before {
+                  content: '\f09b';
+                  font-family: "Font Awesome 6 Brands";
+                  font-weight: 400;
+                }
+              }
+
+              &.mastodon {
+                a:before {
+                  content: '\f4f6';
+                  font-family: "Font Awesome 6 Brands";
+                  font-weight: 400;
+                }
+              }
+
+              &.bluesky {
+                a:before {
+                  content: '\e671';
+                  font-family: "Font Awesome 6 Brands";
+                  font-weight: 400;
+                }
+              }
+
+              &.linkedin {
+                a:before {
+                  content: '\f08c';
+                  font-family: "Font Awesome 6 Brands";
+                  font-weight: 400;
+                }
+              }
+
+              &.buymeacoffee {
+                a:before {
+                  content: '\f7b6';
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    input:checked + aside {
+      display: flex;
+    }
+  }
+}

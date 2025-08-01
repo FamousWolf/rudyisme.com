@@ -1,0 +1,12 @@
+footer {
+  background-color: #eeeeee;
+  margin: 0 -25px -25px -25px;
+  padding: 25px;
+  text-align: center;
+}
+
+@media (max-width: 450px) {
+  footer {
+    margin: 0;
+  }
+}

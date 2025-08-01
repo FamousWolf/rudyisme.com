@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>
+        {% if page.url == '/'%}
+            {{ site.name }} | {{ title }}
+        {% else %}
+            {{ title }} | {{ site.name }}
+        {% endif %}
+    </title>
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="{{ description }}" />
+    <meta property="og:title" content="{{ title }} | {{ site.name }}" />
+    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://{{ client.domain }}{{ page.url }}" />
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <link rel="stylesheet" href="/assets/Css/Main.css" media="all" />
+    <link rel="canonical" href="{{ site.baseUrl }}{{ page.url }}" />
+
+    <script>
+        var _paq = window._paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+            var u="//matomo.rudyisme.com/";
+            _paq.push(['setTrackerUrl', u+'matomo.php']);
+            _paq.push(['setSiteId', '1']);
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+</head>
+<body>
+
+<header id="title">
+    <h1 class="title"><a href="/">Rudy is me</a></h1>
+    <nav class="menu">
+        <input type="checkbox" aria-label="Toggle menu" />
+        <aside>
+            <section class="about">
+                <h2>Hello, my name is Rudy Gnodde</h2>
+                <img src="/assets/Images/rudy.jpg" alt="Rudy Gnodde" />
+                <p>I am computer programmer from The Netherlands. I mostly work with <a href="https://typo3.org" target="_blank">TYPO3 CMS</a> and <a href="https://symfony.com" target="_blank">Symfony</a>, preferably making large, complex websites and webapps. I also enjoy messing around with <a href="https://home-assistant.io" target="_blank">Home Assistant</a>, trying to automate stuff as much as my wife allows (so mostly just in my home office) and usually have a couple of other personal projects I'm working on. Other than that I spend my time with my family, playing board and computer games, hiking, cycling, politics, reading and relaxing.</p>
+                <p>On this website I post anything I think is interesting and like to share. Mostly it's about programming, home automation, some hiking and maybe a little politics. Any opinions I write here are my own and not the opinion of any company I work for or organisation I'm affiliated to, unless stated otherwise.</p>
+                <p>If you like what I write/do and want to help me, consider <a href="https://buymeacoffee.com/rudygnodde" target="_blank">buying me a cup of tea</a>.</p>
+            </section>
+            <section class="links">
+                <h2>Social media</h2>
+                <ul>
+                    <li class="github"><a href="https://github.com/FamousWolf" target="_blank" title="Github profile">Github profile</a></li>
+                    <li class="mastodon"><a href="https://fosstodon.org/@rudy" target="_blank" title="Mastodon profile">Mastodon profile</a></li>
+                    <li class="bluesky"><a href="https://bsky.app/profile/gnodde.bsky.social" target="_blank" title="Bluesky profile">Bluesky profile</a></li>
+                    <li class="linkedin"><a href="https://nl.linkedin.com/in/rudygnodde" target="_blank" title="LinkedIn profile">LinkedIn profile</a></li>
+                    <li class="buymeacoffee"><a href="https://buymeacoffee.com/rudygnodde" target="_blank" title="Buy me a coffee">Buy me a coffee</a></li>
+                </ul>
+            </section>
+        </aside>
+    </nav>
+</header>
+
+<section id="content">
+    {{ content }}
+</section>
+
+<footer>
+    <p>Copyright &copy; 2024-2025 Rudy Gnodde</p>
+    <p>
+        This weblog and all text on it is licensed under a<br />
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    </p>
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license" target="_blank">
+        <img alt="Creative Commons Attribution-ShareAlike 4.0 International License" src="/assets/Images/license.png" width="88" height="31" />
+    </a>
+</footer>
+
+<noscript>
+    <img referrerpolicy="no-referrer-when-downgrade" src="https://matomo.rudyisme.com/matomo.php?idsite=1&amp;rec=1" style="border:0" alt="" />
+</noscript>
+
+</body>
+</html>

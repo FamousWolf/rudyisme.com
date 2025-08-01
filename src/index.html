@@ -1,0 +1,61 @@
+---
+layout: "base.html"
+description: "A blog by Rudy Gnodde about anything I think is interesting and like to share. Mostly it's about programming, home automation, some hiking and maybe a little politics."
+title: "A blog by Rudy Gnodde"
+pagination:
+    data: collections.post
+    size: 10
+    alias: posts
+---
+
+<div class="list">
+{%- for post in posts -%}
+    <article class="item" itemscope="itemscope" itemtype="http://schema.org/Article">
+        <time itemprop="datePublished" datetime="{{ post.data.date | rawPostDate }}">
+            {{ post.data.date | postDate }}
+        </time>
+        <header class="title">
+            <h2>
+                <a href="{{ post.page.url }}" itemprop="headline">
+                    {{ post.data.title }}
+                </a>
+            </h2>
+        </header>
+        {% if post.data.categories %}
+        <aside class="categories">
+            <ul>
+                {%- for category in post.data.categories -%}
+                <li>{{ category }}</li>
+                {%- endfor -%}
+            </ul>
+        </aside>
+        {% endif %}
+        {% if post.data.image %}
+        <figure class="image">
+            <a href="{{ post.page.url }}">
+                <picture>
+                    <img src="{{ post.data.image }}" alt="" />
+                </picture>
+            </a>
+        </figure>
+        {% endif %}
+        <div class="description" itemprop="description">
+            {{ post.data.description }}
+        </div>
+        <div class="more">
+            <a href="{{ post.page.url }}">
+                Continue reading
+            </a>
+        </div>
+    </article>
+{%- endfor -%}
+    <ul class="pagination" role="navigation">
+        <li class="first">{% if page.url != pagination.href.first %}<a href="{{ pagination.href.first }}">First</a>{% else %}<span>First</span>{% endif %}</li>
+        <li class="previous">{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}<span>Previous</span>{% endif %}</li>
+    {%- for pageEntry in pagination.pages %}
+        <li>{% if page.url != pagination.hrefs[ forloop.index0 ] %}<a href="{{ pagination.hrefs[ forloop.index0 ] }}">{{ forloop.index }}</a>{% else %}<span>{{ forloop.index }}</span>{% endif %}</li>
+    {%- endfor %}
+        <li class="next">{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}<span>Next</span>{% endif %}</li>
+        <li class="last">{% if page.url != pagination.href.last %}<a href="{{ pagination.href.last }}">Last</a>{% else %}<span>Last</span>{% endif %}</li>
+    </ul>
+</div>
