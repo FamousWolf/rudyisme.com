@@ -1,4 +1,5 @@
 import { DateTime } from 'luxon'
+import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 
 export default function(config) {
     config.setInputDirectory('src');
@@ -19,6 +20,24 @@ export default function(config) {
     });
 
     config.addCollection('post', function (collection) {
-        return collection.getAllSorted().reverse();
+        return collection.getAllSorted();
+    });
+
+    config.addPlugin(feedPlugin, {
+        type: 'atom',
+        outputPath: '/feed.xml',
+        collection: {
+            name: 'post',
+            limit: 10,
+        },
+        metadata: {
+            language: 'en',
+            title: 'RudyIsMe.com',
+            subtitle: "Personal weblog of Rudy Gnodde, a computer programmer from the Netherlands, mostly about programming, home automation, some hiking and maybe a little politics.",
+            base: "https://rudyisme.com/",
+            author: {
+                name: "Rudy Gnodde",
+            }
+        }
     });
 };
