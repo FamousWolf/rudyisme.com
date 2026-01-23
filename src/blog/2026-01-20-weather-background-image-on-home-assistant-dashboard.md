@@ -8,6 +8,8 @@ categories:
   - dashboard
   - weather
 ---
+We've had a tablet showing a family week planner, weather information and some notifications hanging in our living room for a while now. Recently I've played around with the styling and thought it would be cool if the background image changed depending on the weather. In this article I'll explain how I made this.
+
 The first thing I did was check what weather conditions are available in Home Assistant. This can be found [here](https://www.home-assistant.io/integrations/weather/#condition-mapping). I don't use all the conditions for the background image, but just stuck with raining (lightning-rainy, pouring, rainy), snowing (snowy, snowy-rainy), foggy (fog) and sunny (sunny). If there's a different condition I just show a default image without any weather effect.
 
 Next I made the different images. I used Gemini for that, feeding it the image without any weather effects and asking it to add the effects one by one. It took some tweaking, but eventually I was pretty happy with the results. I uploaded the images to `config/www/backgrounds` on my Home Assistant server, so they'd be available through `http://domain/local/background/`.
