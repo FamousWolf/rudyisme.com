@@ -1,5 +1,5 @@
 ---
-title: Weather background image on Home Assistant dashboard
+title: Add a todo task using Home Assistant Voice
 description: I've been messing around with todo lists in Home Assistant (and Nextcloud through CalDAV) lately and had a thought yesterday. How easy would it be to use the voice assistant to add a task. Turns out it was a default command. However, the default command requires you to add the task description and the list to the command. I wondered how hard it would be to have the voice assistant ask for these. This also turned out to be pretty easy. All it required was a single, simple automation. 
 date: 2026-02-01
 image: ../assets/Images/blog/2026-02-01-add-task-using-home-assistant-voice.png
