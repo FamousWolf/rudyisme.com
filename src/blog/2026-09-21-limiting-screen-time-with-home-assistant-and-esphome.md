@@ -1,7 +1,7 @@
 ---
 title: Limiting screen time with Home Assistant and ESPHome
 description: My 5-year-old son often wakes ridiculously early and goes downstairs to watch TV. This means he gets way more screen time than we would like, especially on weekends. I solved this using Home Assistant, a smart plug and an M5Stack Core2 device with ESPHome.
-date: 2026-09-21
+date: 2026-10-02
 image: ../assets/Images/blog/2026-09-21-limiting-screen-time-with-home-assistant-and-esphome.png
 categories:
   - home assistant
